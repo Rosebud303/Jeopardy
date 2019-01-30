@@ -1,8 +1,11 @@
 * {
+  box-sizing: border-box;
   margin: 0;
 }
 
 body {
+  background-color: #a3cbed;
+  font-family: 'Raleway', sans-serif;
   margin: 0;
 }
 
@@ -11,13 +14,25 @@ header {
   justify-content: space-around;
 }
 
+h1 {
+  margin-top: 15px;
+  font-size: 75px;
+}
+
 .header-box {
   border: 1px solid black;
-  height: 100px;
+  border-radius: 10px;
+  font-size: 20px;
+  height: 87px;
+  margin-top: 30px;
+  padding: 13px;
   text-align: center;
-  width: 160px;
-
+  width: 175px;
 }
+
+.points {
+  margin-top: 8px;
+} 
 
 main {
   display: flex;
@@ -26,10 +41,27 @@ main {
 
 .row {
   align-items: center;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   height: 700px;
   margin-top: 20px;
   width: 350px;
+}
+
+.clue, 
+.category {
+  border: 1px solid black;
+  border-radius: 10px;
+  color: #9d4f81;
+  font-size: 30px;
+  font-weight: bold;
+  height: 87px;
+  margin-top: 30px;
+  padding: 5px;
+  text-align: center;
+  width: 225px;
+}
+
+.clue {
+  font-size: 63px;
 }
