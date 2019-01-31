@@ -7,7 +7,7 @@ class Game {
 
   createPlayer(player) {
     this.players.push(player);
-  }
+  } 
 
 }
 
