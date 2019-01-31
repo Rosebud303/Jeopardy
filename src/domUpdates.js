@@ -6,3 +6,12 @@
   //pull point value and categoryId
   //Finally, we will have an obj with four categories
   //Each category has an array of clue objects
+
+  const playerOneNameInput = $('.player-1')
+  const playerTwoNameInput = $('.player-2')
+  const playerThreeNameInput = $('.player-3')
+
+  function startGame(e) {
+    e.preventDefault();
+    playerOneNameInput.text()
+  }
