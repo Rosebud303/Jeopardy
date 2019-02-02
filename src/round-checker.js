@@ -5,7 +5,6 @@ class Round {
     this.categories = [];
     this.leftOverCategories = [];
     this.createRandomCategories();
-
   }
 
   createRandomCategories() {
