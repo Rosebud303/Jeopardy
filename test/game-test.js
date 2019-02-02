@@ -17,10 +17,9 @@ describe('Game', function() {
   it('should be able to push players into player array', function() {
 
     let game = new Game();
-    let player = new Player('Duy');
 
-    game.createPlayer(player);
-    assert.deepEqual(game.players, [player])
+    game.createPlayers("Duy", "Sally", "Henry");
+    assert.deepEqual(game.players.length, 3)
 
   });
 }) 
