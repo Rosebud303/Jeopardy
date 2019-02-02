@@ -6,12 +6,15 @@ import './css/base.css';
 
 //  Tell webpack to use an image (link to it in index.html)
 import './images/turing-logo.png'
-import RoundChecker from './round-checker.js'
-
+import './domUpdates.js'
+import Round from './round-checker.js'
+import Game from './game.js'
 
 
 console.log('This is the JavaScript entry file - your code begins here.');
 
 
-window.hello = new RoundChecker();
+window.round = new Round();
+
+window.game = new Game();
 
