@@ -48,6 +48,11 @@ form {
   width: 300px;
 }
 
+.start {
+  text-align: center;
+  margin-top: 10px;
+}
+
 .start-game {
   border-radius: 10px;
   font-size: 30px;
