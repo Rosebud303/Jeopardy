@@ -1,12 +1,23 @@
 import Player from './player.js';
+import data from './data.js';
 import Round from './round-checker.js';
 import domUpdates from './domUpdates.js';
 
 class Game {
   constructor() {
+    this.categories = [];
+    this.clues = [];
     this.players = [];
     this.round = [];
-    this.turnCounter = 0;
+    this.turn = 0;
+    this.currentPlayer = this.players[this.turn];
+  }
+
+  beginGame() {
+    this.createPlayers();
+    this.parseData();
+    this.createRandomCategories();
+    round.getFourCategoriesPerRound()
   }
 
   createPlayers(name1, name2, name3) {
@@ -21,16 +32,47 @@ class Game {
     domUpdates.displayPlayerScore();
   }
 
-  createRounds() {
-    const round1 = new Round();
-    const round2 = new Round();
-    const round3 = new Round();
+  // createRounds() {
+  //   const round1 = new Round();
+  //   const round2 = new Round();
+  //   const round3 = new Round();
+  //   if(this.round.length <= 3) {
+  //     this.round.push(round1, round2, round3);
+  //   }
+  //   // const round = new Round(this.categories, this.leftOverCategories);
+  //   // this.round.push(round);
+  // }
 
-    if(this.round.length <= 3) {
-      this.round.push(round1, round2, round3);
+  createRound() {
+    round.getFourCategoriesPerRound();
+  }
+
+  parseData() {
+    let dataVals = Object.values(data); //grabbing vals of data
+    dataVals.shift(); //getting rid of 1st val which we dont need (version, etc)
+    this.categories = Object.keys(dataVals.shift()); //grabbing keys and putting them into the array
+    this.clues = dataVals.shift(); //shifting all clues 
+  }
+
+   createRandomCategories() {
+    for (let i = this.categories.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [this.categories[i], this.categories[j]] = [this.categories[j], this.categories[i]];  
     }
-    // const round = new Round(this.categories, this.leftOverCategories);
-    // this.round.push(round);
+    // let shuffledCategories = Object.keys(data.categories)
+    // this.leftOverCategories = shuffledCategories;
+    // for(var i = 0; i < 2; i++){
+    //     this.leftOverCategories.pop();
+    // }
+  }
+
+  playerTurns() {
+    this.turn++;
+    if(this.turn === this.players.length) {
+      this.turn = 0;
+    }
+    this.currentPlayer = this.players[this.turn];
+    //change color of turn? in domUpdates here
   }
 
   chooseWinner() {

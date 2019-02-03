@@ -1,4 +1,5 @@
 import Game from './game.js';
+import Round from './round-checker.js';
 
 let domUpdates = {
 
@@ -11,6 +12,13 @@ let domUpdates = {
   displayPlayerScore() {
     $('.points').each((i, point) => {
       $(point).text(game.players[i].score);
+    });
+  },
+
+  displayCategories(val) {
+    $('.category-js').each((i, category) => {
+      console.log(val[i])
+      $(category).text(val[i])
     });
   },
   

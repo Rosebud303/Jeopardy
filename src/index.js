@@ -3,6 +3,7 @@
 
 // Tell webpack to use a CSS file
 import './css/base.css';
+import './images/logo.jpg'
 
 //  Tell webpack to use an image (link to it in index.html)
 import './images/turing-logo.png';
@@ -24,6 +25,9 @@ window.game = new Game();
 $('.start-game').on('click', function(e) {
   e.preventDefault();
   domUpdates.startGame();
+  game.beginGame();
   $('input').hide('slow');
+  $('button').hide('slow');
+  //maybe get this above to toggle to say 'quit game' instead
 });
 
