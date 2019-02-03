@@ -17,8 +17,13 @@ let domUpdates = {
 
   displayCategories(val) {
     $('.category-js').each((i, category) => {
-      console.log(val[i])
       $(category).text(val[i])
+    });
+  },
+
+  displayPointValues(points) {
+    $('.clue-js').each((i, point) => {
+      $(point).text(points[i].pointValue)
     });
   },
   

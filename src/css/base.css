@@ -29,6 +29,7 @@ header {
 .header-box {
   border: 4px solid black;
   border-radius: 10px;
+  color: #743E93;
   font-size: 20px;
   height: 87px;
   margin-top: 30px;
@@ -50,7 +51,6 @@ form {
   border: 2px solid black;
   border-radius: 10px;
   font-size: 25px;
-  font-style: italic;
   height: 45px;
   margin: 30px;
   padding: 5px;
@@ -92,20 +92,22 @@ main {
 
 .clue, 
 .category {
-  border: 2px solid black;
   border-radius: 10px;
-  color: #9E377E;
-  font-size: 30px;
-  font-weight: bold;
-  height: 87px;
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 5px;
   text-align: center;
   width: 225px;
 }
 
+.category {
+  font-size: 25px;
+}
+
 .clue {
+  border: 2px solid black;
+  color: #9E377E;
   font-size: 63px;
+  font-weight: bold;
 }
 
 .clue:hover {

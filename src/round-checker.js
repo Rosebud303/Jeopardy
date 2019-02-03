@@ -21,6 +21,7 @@ class Round {
       this.roundCategories.push(game.categories.pop());
     }
     domUpdates.displayCategories(this.roundCategories)
+    //need to put spies whenever using domUpdates for testing
   }
 
   getCluesToPopulate() {
@@ -41,9 +42,19 @@ class Round {
       [clue[i], clue[j]] = [clue[j], clue[i]];  
     }
     })
-    console.log(filterClues)
+    // console.log(filterClues)
+    this.filterCluesToDisplayOnDom(filterClues); //passes filterclues down to the next function
   }
 
+  filterCluesToDisplayOnDom(cluesContainer) {
+    this.roundClues = cluesContainer.reduce((acc, clue) => {
+     for(let i = 1; i < 5; i++) {
+      acc.push(clue.find(point => point.pointValue === i * 100))
+     }
+      return acc
+    }, [])
+    domUpdates.displayPointValues(this.roundClues);
+  }
   //create another function here that grabs one clue value at a time
   //ie $100, $200, etc. maybe do another map with a filter inside of it
   //filter out the first 100, then 1st 200, etc.
