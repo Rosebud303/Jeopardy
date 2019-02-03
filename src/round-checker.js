@@ -4,6 +4,7 @@ class Round {
   constructor() {
     this.categories = [];
     this.leftOverCategories = [];
+    this.finalRound = [];
     this.createRandomCategories();
   }
 
@@ -25,7 +26,7 @@ class Round {
   cluesCreator(clues) {
     let currentClues = clues.reduce((acc, el) => {
     data.clues.forEach((clue) => {
-      if(clue.categoryId === data.categories[el] ){
+      if(clue.categoryId === data.categories[el]){
         acc.push(clue);
       }
     });
