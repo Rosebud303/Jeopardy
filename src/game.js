@@ -14,7 +14,6 @@ class Game {
   }
 
   beginGame() {
-    // this.createPlayers();
     this.parseData();
     this.createRandomCategories();
     round.getFourCategoriesPerRound();
