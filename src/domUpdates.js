@@ -33,6 +33,18 @@ let domUpdates = {
     game.createPlayers($('.input').eq(0).val(), $('.input').eq(1).val(), $('.input').eq(2).val()); 
     game.beginGame();
 
+  },
+
+  displayBoard() {
+    this.displayPlayersName();
+    this.displayPlayerScore();
+    this.displayPointValues();
+    this.displayCategories();
+  },
+
+  clearBoard() {
+    $('.category-js').hide();
+    $('.clue-js').hide();
   }
 }
 
