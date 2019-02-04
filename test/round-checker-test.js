@@ -1,5 +1,6 @@
  import chai from 'chai';
-// import Round from '../src/round-checker.js';
+ import Round from '../src/round-checker.js';
+import Game from '../src/game.js';
 const expect = chai.expect;
 
 describe('Round', function() {
@@ -13,10 +14,12 @@ describe('Round', function() {
   // expect(questionList).to.have.length()
   // });
 
-  it('should give me back random categories', function () {
+  it('should return back random categories', function () {
     let round = new Round();
 
-    expect(round.categories).to.have.length(4);
-    expect(round.leftOverCategories).to.have.length(4);
+    round.getFourCategoriesPerRound();
+
+    expect(round.roundCategories).to.have.length(4);
+    expect(round.finalRound).to.have.length(4);
   }); 
 })

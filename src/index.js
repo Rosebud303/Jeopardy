@@ -1,11 +1,9 @@
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file
 
-// Tell webpack to use a CSS file
 import './css/base.css';
+import './images/logo.jpg'
 
-//  Tell webpack to use an image (link to it in index.html)
-import './images/turing-logo.png';
 import domUpdates from './domUpdates.js';
 import Round from './round-checker.js';
 import Game from './game.js';
@@ -24,6 +22,9 @@ window.game = new Game();
 $('.start-game').on('click', function(e) {
   e.preventDefault();
   domUpdates.startGame();
+  game.beginGame();
   $('input').hide('slow');
+  $('button').hide('slow');
+  //maybe get this above to toggle to say 'quit game' instead
 });
 
