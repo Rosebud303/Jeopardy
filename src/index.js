@@ -22,7 +22,7 @@ window.game = new Game();
 $('.start-game').on('click', function(e) {
   e.preventDefault();
   domUpdates.startGame();
-  game.beginGame();
+  // game.beginGame();
   $('input').hide('slow');
   $('button').hide('slow');
   //maybe get this above to toggle to say 'quit game' instead

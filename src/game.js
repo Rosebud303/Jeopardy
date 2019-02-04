@@ -14,10 +14,11 @@ class Game {
   }
 
   beginGame() {
-    this.createPlayers();
+    // this.createPlayers();
     this.parseData();
     this.createRandomCategories();
-    round.getFourCategoriesPerRound()
+    round.getFourCategoriesPerRound();
+    round.getCluesToPopulate();
   }
 
   createPlayers(name1, name2, name3) {
@@ -59,11 +60,6 @@ class Game {
       const j = Math.floor(Math.random() * (i + 1));
       [this.categories[i], this.categories[j]] = [this.categories[j], this.categories[i]];  
     }
-    // let shuffledCategories = Object.keys(data.categories)
-    // this.leftOverCategories = shuffledCategories;
-    // for(var i = 0; i < 2; i++){
-    //     this.leftOverCategories.pop();
-    // }
   }
 
   playerTurns() {
@@ -81,7 +77,7 @@ class Game {
   let winner = this.players.sort((a, b) => {
     return a.score - b.score;
   }).pop();
-  console.log(winner);
+  console.log(winner.name);
 }
 }
 
