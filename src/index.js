@@ -22,6 +22,7 @@ window.game = new Game();
 $('.start-game').on('click', function(e) {
   e.preventDefault();
   domUpdates.startGame();
+  // domUpdates.clearBoard();
   // game.beginGame();
   $('input').hide('slow');
   $('button').hide('slow');
