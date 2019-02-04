@@ -14,12 +14,12 @@ describe('Round', function() {
   // expect(questionList).to.have.length()
   // });
 
-  it('should return back random categories', function () {
-    let round = new Round();
+  // it('should return back random categories', function () {
+  //   let round = new Round();
 
-    round.getFourCategoriesPerRound();
+  //   round.getFourCategoriesPerRound();
 
-    expect(round.roundCategories).to.have.length(4);
-    expect(round.finalRound).to.have.length(4);
-  }); 
+  //   expect(round.roundCategories).to.have.length(4);
+  //   expect(round.finalRound).to.have.length(4);
+  // }); 
 })
