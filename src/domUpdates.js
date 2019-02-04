@@ -24,12 +24,15 @@ let domUpdates = {
   displayPointValues(points) {
     $('.clue-js').each((i, point) => {
       $(point).text(points[i].pointValue)
+      $(point).attr('id', points[i].question)
     });
   },
   
   startGame() {
     console.log(game)
-    game.createPlayers($('.input').eq(0).val(), $('.input').eq(1).val(), $('.input').eq(2).val());  
+    game.createPlayers($('.input').eq(0).val(), $('.input').eq(1).val(), $('.input').eq(2).val()); 
+    game.beginGame();
+
   }
 }
 
