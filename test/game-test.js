@@ -2,9 +2,13 @@ import chai from 'chai';
 import Game from '../src/game.js';
 import Player from '../src/player.js';
 import spies from 'chai-spies';
+import domUpdates from '../src/domUpdates.js';
 chai.use(spies);
 const expect = chai.expect;
-const assert = chai.assert;
+
+
+chai.spy.on(domUpdates, 'displayPlayersName', () => true);
+chai.spy.on(domUpdates, 'displayPlayerScore', () => true);
 
 
 describe('Game', function() { 
@@ -13,7 +17,7 @@ describe('Game', function() {
 
     let game = new Game();
 
-    assert.deepEqual(game.players, []);
+    expect(game.players).to.deep.equal([]);
   //can do expect(game.players).to.deep.equal([])
   })
 
@@ -22,7 +26,7 @@ describe('Game', function() {
     let game = new Game();
 
     game.createPlayers("Duy", "Sally", "Henry");
-    assert.deepEqual(game.players.length, 3)
+    expect(game.players.length).to.deep.equal(3);
 
   });
 }) 
