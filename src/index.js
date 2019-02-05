@@ -19,8 +19,8 @@ window.round = new Round();
 
 window.game = new Game();
 
-$('.start-game').on('click', function(e) {
-  e.preventDefault();
+$('.start-game').on('click', function() {
+  // e.preventDefault();
   domUpdates.startGame();
   // domUpdates.clearBoard();
   // game.beginGame();
@@ -28,4 +28,9 @@ $('.start-game').on('click', function(e) {
   $('button').hide('slow');
   //maybe get this above to toggle to say 'quit game' instead
 });
+
+    $('.clue-js').on('click', function() {
+      domUpdates.displayQuestion(event)
+      domUpdates.clearBoard();
+    })
 

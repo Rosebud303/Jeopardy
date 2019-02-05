@@ -45,7 +45,17 @@ let domUpdates = {
   clearBoard() {
     $('.category-js').hide();
     $('.clue-js').hide();
+  },
+
+  displayQuestion(event) {
+    let $cluesId = $('.clues-js').each((i, clue) => {
+      //tryn to get this to work somehow...not doing it correctly yet
+    });
+    find($(event.target))
+    console.log(event.target.id);
   }
+  //on click we want it to hide the value
+  //and display the card with the question
 }
 
 
