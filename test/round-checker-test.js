@@ -38,7 +38,6 @@ describe('Round', function() {
 
     round.getFourCategoriesPerRound();
 
-    expect(round.roundCategories).to.have.length(4);
-    expect(round.finalRound).to.have.length(4);
+    expect(round.roundCategories).to.have.lengthOf(4);
   }); 
 })
