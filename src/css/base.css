@@ -94,16 +94,23 @@ main {
 .category {
   border-radius: 10px;
   margin-top: 20px;
+  height: 100px;
   padding: 5px;
   text-align: center;
   width: 225px;
 }
 
 .category {
+  align-items: center;
+  background: #b38ccc;
+  border: 2px solid black;
+  display: flex;
   font-size: 25px;
+  justify-content: center;
 }
 
 .clue {
+  background-color: #6fa2d4;
   border: 2px solid black;
   color: #9E377E;
   font-size: 63px;
