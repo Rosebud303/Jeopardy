@@ -22,11 +22,10 @@ describe('Game', function() {
 
   it('should have default properties', function() {
 
-
     expect(game.players).to.deep.equal([]);
     expect(game.clues).to.deep.equal([]);
     expect(game.categories).to.deep.equal([]);
-    expect(game.round).to.deep.equal([]);
+    expect(game.round).to.equal(0);
     expect(game.turn).to.equal(0);
     expect(game.currentPlayer).to.equal(game.players[game.turn]);
   });
