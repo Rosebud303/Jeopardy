@@ -8,16 +8,16 @@ const data = {
     },
   },
   categories: {
-    'unitedStatesHistory': 1,
-    'lifeSciences': 2,
-    'publicHealth': 3,
-    'educationJargon': 4,
-    'nameThatBoardGame': 5,
-    'americanLiterature': 6,
-    'biographies': 7,
-    'americanCities': 8,
-    'food': 9,
-    'cableTV': 10
+    'United States History': 1,
+    'Life Sciences': 2,
+    'Public Health': 3,
+    'Education Jargon': 4,
+    'Name That Board Game': 5,
+    'American Literature': 6,
+    'Biographies': 7,
+    'American Cities': 8,
+    'Food': 9,
+    'Cable TV': 10
   },
   clues: [
     {

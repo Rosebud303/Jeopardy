@@ -8,7 +8,7 @@ class Game {
     this.categories = [];
     this.clues = [];
     this.players = [];
-    this.round = [];
+    this.round = 0;
     this.turn = 0;
     this.currentPlayer = this.players[this.turn];
   }
@@ -60,7 +60,7 @@ class Game {
       [this.categories[i], this.categories[j]] = [this.categories[j], this.categories[i]];  
     }
   }
-
+// if it is player turn invoke this add points to certain player only
   playerTurns() {
     this.turn++;
     if(this.turn === this.players.length) {

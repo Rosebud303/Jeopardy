@@ -17,7 +17,7 @@ let domUpdates = {
 
   displayCategories(val) {
     $('.category-js').each((i, category) => {
-      $(category).text(val[i])
+      $(category).text(val[i].toUpperCase())
     });
   },
 
@@ -36,10 +36,9 @@ let domUpdates = {
   },
 
   displayBoard() {
-    this.displayPlayersName();
-    this.displayPlayerScore();
-    this.displayPointValues();
-    this.displayCategories();
+    //needs to be able to reappend cards to page
+    //cards that have been used should no longer be there as well
+
   },
 
   clearBoard() {
@@ -47,16 +46,20 @@ let domUpdates = {
     $('.clue-js').hide();
   },
 
-  displayQuestion(event) {
-    let $cluesId = $('.clues-js').each((i, clue) => {
-      //tryn to get this to work somehow...not doing it correctly yet
-    });
-    find($(event.target))
-    console.log(event.target.id);
-  }
+  displayQuestion(question) {
+    let div = $(
+        `<section class="append-question">
+            <h2>${question}</h2>
+            <form>
+              <button></button>
+              <button></button>
+            </form>
+        </section>`
+    )
+      $('main').append(div);
   //on click we want it to hide the value
   //and display the card with the question
+  }
 }
-
 
 export default domUpdates;
