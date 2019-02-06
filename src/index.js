@@ -9,6 +9,8 @@ import Round from './round-checker.js';
 import Game from './game.js';
 import $ from 'jquery';
 import jQuery from 'jquery';
+// import Player from './player.js';
+
 
 // window.jQuery = $;
 
@@ -22,27 +24,30 @@ $('.start-game').on('click', function() {
   $('button').hide('slow');
 });
 
-$cluesCard.on('click', function() {
+$cluesCard.on('click', function(e) {
   domUpdates.displayQuestion(round.roundClues[$cluesCard.index($(event.target))].question)
-  console.log(round.roundClues[$cluesCard.index($(event.target))].answer)
+  // console.log(round.roundClues[$cluesCard.index($(event.target))].answer)
+  let clueId = $cluesCard.index($(event.target))
+  game.answerSaver(round.roundClues[clueId].answer);
+  game.pointSaver(round.roundClues[clueId].pointValue);
+  console.log(game.answerIndex);
+  console.log(game.pointIndex);
   domUpdates.disableClue();
 });
 
 $('body').on('click', '#submit-button', function (e) {
   e.preventDefault();
-  console.log(e)
-  findClue(e);
-  // console.log('player turn now', game.turn)
-  domUpdates.displayAnswer(round.roundClues[0].answer);
   game.playerTurns(round);
+  game.currentPlayer.updateScore(game);
+  console.log(game.currentPlayer)
+  domUpdates.displayAnswer(game.answerIndex);
+  domUpdates.displayPlayerScore(game);
 });
 
 $('body').on('click', '#confirm', function (e) {
   domUpdates.removeQuestion();
 });
 
-function findClue(e){
-  console.log('e', e);
-  console.log('round', round);
-}
+
+
 

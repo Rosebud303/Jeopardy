@@ -11,6 +11,9 @@ class Game {
     this.round = 1;
     this.turn = 0;
     this.currentPlayer = player;
+    this.answerIndex;
+    this.pointIndex;
+
   }
 
   beginGame(round) {
@@ -18,6 +21,14 @@ class Game {
     this.createRandomCategories();
     round.getFourCategoriesPerRound(this);
     round.getCluesToPopulate(this);
+  }
+
+  answerSaver(is) {
+    this.answerIndex = is;
+  }
+
+  pointSaver(is) {
+    this.pointIndex = is;
   }
 
   createPlayers(name1, name2, name3) {
@@ -64,6 +75,7 @@ class Game {
       round.getFourCategoriesPerRound(this);
       round.getCluesToPopulate(this);
     }
+    
     console.log(this.currentPlayer)
   }
 
