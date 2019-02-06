@@ -9,7 +9,7 @@ let domUpdates = {
     });
   },
 
-  displayPlayerScore() {
+  displayPlayerScore(game) {
     $('.points').each((i, point) => {
       $(point).text(game.players[i].score);
     });
@@ -17,21 +17,20 @@ let domUpdates = {
 
   displayCategories(val) {
     $('.category-js').each((i, category) => {
-      $(category).text(val[i].toUpperCase())
+      $(category).text(val[i])
     });
   },
 
   displayPointValues(points) {
-    $('.clue-js').each((i, point) => {
+    $('.number').each((i, point) => {
       $(point).text(points[i].pointValue)
-      $(point).attr('id', points[i].question)
     });
   },
   
-  startGame() {
+  startGame(game, round) {
     console.log(game)
     game.createPlayers($('.input').eq(0).val(), $('.input').eq(1).val(), $('.input').eq(2).val()); 
-    game.beginGame();
+    game.beginGame(round);
 
   },
 
@@ -42,7 +41,8 @@ let domUpdates = {
   },
 
   disableClue() {
-    // $('.clue-js').index($(event.target)).hide();
+    $('.number').eq($('.number').index($(event.target))).hide('swing');
+    // console.log($('.clues-js').index($(event.target)));
   },
 
   displayQuestion(question) {

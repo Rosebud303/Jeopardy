@@ -123,6 +123,11 @@ main {
   font-weight: bold;
 }
 
+.number {
+  height: 100px;
+  width: 225px;
+}
+
 .clue:hover {
   background-color: #FEE090;
 }
