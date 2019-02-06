@@ -60,9 +60,10 @@ class Game {
       this.currentPlayer = this.players[0]
     } 
     if(this.turn >= 16) {
-      this.round++
+      this.round++;
       round.getFourCategoriesPerRound(this);
       round.getCluesToPopulate(this);
+      domUpdates.displayRound(this);
     }
     console.log(this.currentPlayer)
   }

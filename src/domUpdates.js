@@ -9,11 +9,19 @@ let domUpdates = {
     });
   },
 
+  displayRound(game) {
+      $('.round-js').text(game.round)
+  },
+
   displayPlayerScore(game) {
     $('.points').each((i, point) => {
       $(point).text(game.players[i].score);
     });
   },
+
+  // displayCurentScore() {
+
+  // },
 
   displayCategories(val) {
     $('.category-js').each((i, category) => {
