@@ -4,17 +4,15 @@ const expect = chai.expect;
 
 
 describe('Player', function()  {
-
-  it('should have a name', function () {
-    let player = new Player()
-
-    expect(player.name).to.equal(player.name)
+  let player;
+  beforeEach(function() {
+    player = new Player();
   });
 
-  it('should default to zero at the start of the game', function() {
-    let player = new Player()
+  it('should have default properties', function () {
 
-    expect(player.score).to.equal(0)
+    expect(player.name).to.equal(player.name);
+    expect(player.score).to.equal(0);
   });
 
 });

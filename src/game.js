@@ -15,7 +15,7 @@ class Game {
 
   beginGame() {
     this.parseData();
-    this.createRandomCategories();
+    this.createRandomCategories(this);
     round.getFourCategoriesPerRound();
     round.getCluesToPopulate();
   }
