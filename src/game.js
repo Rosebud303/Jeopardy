@@ -4,13 +4,13 @@ import Round from './round-checker.js';
 import domUpdates from './domUpdates.js';
 
 class Game {
-  constructor() {
+  constructor(player) {
     this.categories = [];
     this.clues = [];
     this.players = [];
-    this.round = 0;
+    this.round = 1;
     this.turn = 0;
-    this.currentPlayer = this.players[this.turn];
+    this.currentPlayer = player;
   }
 
   beginGame() {
@@ -21,9 +21,9 @@ class Game {
   }
 
   createPlayers(name1, name2, name3) {
-    const player1 = new Player(name1, 76);
-    const player2 = new Player(name2, 15);
-    const player3 = new Player(name3, 66);
+    const player1 = new Player(name1);
+    const player2 = new Player(name2);
+    const player3 = new Player(name3);
 
     if(this.players.length <= 3) {
       this.players.push(player1, player2, player3); 
@@ -31,17 +31,6 @@ class Game {
     domUpdates.displayPlayersName();
     domUpdates.displayPlayerScore();
   }
-
-  // createRounds() {
-  //   const round1 = new Round();
-  //   const round2 = new Round();
-  //   const round3 = new Round();
-  //   if(this.round.length <= 3) {
-  //     this.round.push(round1, round2, round3);
-  //   }
-  //   // const round = new Round(this.categories, this.leftOverCategories);
-  //   // this.round.push(round);
-  // }
 
   createRound() {
     round.getFourCategoriesPerRound();
@@ -60,13 +49,21 @@ class Game {
       [this.categories[i], this.categories[j]] = [this.categories[j], this.categories[i]];  
     }
   }
-// if it is player turn invoke this add points to certain player only
+
   playerTurns() {
     this.turn++;
-    if(this.turn === this.players.length) {
-      this.turn = 0;
+    if(this.currentPlayer === this.players[0]) {
+      this.currentPlayer = this.players[1]
+    } else if (this.currentPlayer === this.players[1]) {
+      this.currentPlayer = this.players[2]
+    } else {
+      this.currentPlayer = this.players[0]
+    } 
+    if(this.turn >= 3 && this.turn < 7) {
+      this.round++
+      round.getFourNewCategories();
     }
-    this.currentPlayer = this.players[this.turn];
+    console.log(this.currentPlayer)
     //change color of turn? in domUpdates here
   }
 
