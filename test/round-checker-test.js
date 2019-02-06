@@ -1,7 +1,7 @@
 import chai from 'chai';
 import Round from '../src/round-checker.js';
 import Game from '../src/game.js';
-// import data from '../src//data.js';
+import data from '../src//data.js';
 import spies from 'chai-spies';
 import domUpdates from '../src/domUpdates.js';
 chai.use(spies);
@@ -12,10 +12,10 @@ chai.spy.on(domUpdates, 'displayPointValues', () => true);
 
 describe('Round', function() {
   let round;
-  let game;
+  // let game;
   beforeEach(function() {
     round = new Round();
-    game = new Game();
+    // game = new Game();
   });
 
   it('should have default properties', function() {
@@ -25,19 +25,10 @@ describe('Round', function() {
     expect(round.finalRound).to.deep.equal([]);
   });
 
-  // it('should return an array of clues', function() {
-
-  // let round = new Round();
-
-  // let questionList = round.roundCreator();
-
-  // expect(questionList).to.have.length()
-  // });
-
-  it('should return back random categories', function () {
-
+  it('should start game with four random categories per round', function () {
+    // game.beginGame();
     round.getFourCategoriesPerRound();
 
-    expect(round.roundCategories).to.have.lengthOf(4);
+    expect(round.roundCategories.length).to.deep.equal(4);
   }); 
 })

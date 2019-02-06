@@ -20,6 +20,11 @@ describe('Game', function() {
     // round = new Round();
   });
 
+  it('should be an instance of game', function() {
+
+    expect(game).to.be.an.instanceof(Game);
+  });
+
   it('should have default properties', function() {
 
     expect(game.players).to.deep.equal([]);
@@ -30,17 +35,15 @@ describe('Game', function() {
     expect(game.currentPlayer).to.equal(game.players[game.turn]);
   });
 
-  it('should be able to push players into player array', function() {
+  it
+
+  it('should only have three players per game', function() {
 
     game.createPlayers("Duy", "Sally", "Henry");
     expect(game.players.length).to.deep.equal(3);
 
   });
 
-  it('should be an instance of game', function() {
-
-    expect(game).to.be.an.instanceof(Game);
-  });
 
   it('should increment turns for each player', function() {
 
@@ -51,4 +54,11 @@ describe('Game', function() {
     expect(game.turn).to.equal(1);
 
   });
+
+  it('should choose winner at the end of all rounds', function() {
+    let winner = game.players.sort((a, b) => {
+    return a.score - b.score;
+  }).pop();
+    expect(game.players.length).to.deep.equal(0)
+  })
 });
