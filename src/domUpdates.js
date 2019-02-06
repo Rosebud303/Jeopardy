@@ -41,24 +41,27 @@ let domUpdates = {
 
   },
 
-  clearBoard() {
-    $('.category-js').hide();
-    $('.clue-js').hide();
+  disableClue() {
+    // $('.clue-js').index($(event.target)).hide();
   },
 
   displayQuestion(question) {
     let div = $(
-        `<section class="append-question">
-            <h2>${question}</h2>
+        `<section class='append-question'>
+            <h2 class='question-card'>${question}</h2>
             <form>
-              <button></button>
-              <button></button>
+              <input id='answer-id' placeholder='Answer here...'>
+              <button id='submit-button'>Submit</button>
             </form>
         </section>`
     )
       $('main').append(div);
   //on click we want it to hide the value
   //and display the card with the question
+  },
+
+  removeQuestion() {
+    $('.append-question').remove();
   }
 }
 

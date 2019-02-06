@@ -17,17 +17,34 @@ window.round = new Round();
 window.game = new Game();
 
 let $cluesCard = $('.clue-js');
+// let cardId = round.roundClues[$cluesCard.index($(event.target))];
 
 $('.start-game').on('click', function() {
-  domUpdates.startGame(game);
+  domUpdates.startGame();
   $('input').hide('slow');
   $('button').hide('slow');
+  // game.playerTurns();
 });
 
 $cluesCard.on('click', function() {
   domUpdates.displayQuestion(round.roundClues[$cluesCard.index($(event.target))].question)
   // $cluesCard.index($(event.target)).text('').css('background-color', 'black')
-  domUpdates.clearBoard();
+  // domUpdates.clearBoard();
 });
 
+$('body').on('click', '#submit-button', function (e, round) {
+  e.preventDefault();
+  findClue(e);
+  console.log('player turn now', game.turn)
+  domUpdates.removeQuestion();
+  // domUpdates.disableClue();
+  game.playerTurns();
+  // console.log(round.roundClues[$cluesCard.index($(event.target))]);
+})
+
+
+function findClue(e){
+  console.log('e', e);
+  console.log('round', round);
+}
 

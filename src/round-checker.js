@@ -5,11 +5,20 @@ import domUpdates from './domUpdates.js';
 class Round {
   constructor() {
     this.roundCategories = [];
+    this.roundTwoCategories = [];
     this.roundClues = [];
     this.finalRound = [];
   }
 
+  getFourNewCategories() {
+    for(var i = 0; i < 4; i++) {
+      this.roundTwoCategories.push(game.categories.pop());
+    }
+    domUpdates.displayCategories(this.roundTwoCategories);
+  }
+
   getFourCategoriesPerRound(game) {
+
     for(var i = 0; i < 4; i++) {
       this.roundCategories.push(game.categories.pop());
     }
@@ -43,7 +52,7 @@ class Round {
     }, [])
     domUpdates.displayPointValues(this.roundClues);
   }
-  
+
   cluesCreator(clues) {
     let currentClues = clues.reduce((acc, el) => {
     data.clues.forEach((clue) => {
