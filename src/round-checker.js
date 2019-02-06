@@ -17,11 +17,12 @@ class Round {
     domUpdates.displayCategories(this.roundTwoCategories);
   }
 
-  getFourCategoriesPerRound() {
+  getFourCategoriesPerRound(game) {
+
     for(var i = 0; i < 4; i++) {
       this.roundCategories.push(game.categories.pop());
     }
-    domUpdates.displayCategories(this.roundCategories)
+    domUpdates.displayCategories(this.roundCategories);
   }
 
   getCluesToPopulate() {
