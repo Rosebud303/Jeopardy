@@ -12,10 +12,10 @@ chai.spy.on(domUpdates, 'displayPointValues', () => true);
 
 describe('Round', function() {
   let round;
-  // let game;
+  let game;
   beforeEach(function() {
     round = new Round();
-    // game = new Game();
+    game = new Game();
   });
 
   it('should have default properties', function() {
@@ -27,8 +27,8 @@ describe('Round', function() {
 
   it('should start game with four random categories per round', function () {
     // game.beginGame();
-    round.getFourCategoriesPerRound();
+    round.getFourCategoriesPerRound(game);
 
-    expect(round.roundCategories.length).to.deep.equal(4);
+    expect(round.roundCategories.length).to.equal(4);
   }); 
 })
