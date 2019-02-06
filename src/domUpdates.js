@@ -10,7 +10,7 @@ let domUpdates = {
   },
 
   displayRound(game) {
-      $('.round-js').text(game.round)
+      $('.round-js').text(game.round);
   },
 
   displayPlayerScore(game) {
@@ -51,6 +51,10 @@ let domUpdates = {
   disableClue() {
     $('.number').eq($('.number').index($(event.target))).hide('swing');
     // console.log($('.clues-js').index($(event.target)));
+  },
+
+  showClue(game) {
+     $('.number').show();
   },
 
   displayQuestion(question) {
