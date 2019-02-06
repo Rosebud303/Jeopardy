@@ -1,7 +1,5 @@
 # Jeopardy!
 
-<iframe src="https://giphy.com/embed/1dJTZUTgUjj4SRZYQT" width="480" height="349" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/jeopardy--alex-trebek-1dJTZUTgUjj4SRZYQT">via GIPHY</a></p>
-
 ## Authors
 Duy Thanh Vu
 and
@@ -39,3 +37,15 @@ HTML
 Mocha 
 Chai
 
+## Our project:
+
+
+![jeopardy-full](https://user-images.githubusercontent.com/40863560/52379798-b7125080-2a28-11e9-9651-53956358c9c1.png)
+
+
+### Hover states:
+
+
+<img width="707" alt="screen shot 2019-02-06 at 3 56 37 pm" src="https://user-images.githubusercontent.com/40863560/52379815-c85b5d00-2a28-11e9-8242-17c4d29e2ae3.png">
+
+<img width="703" alt="screen shot 2019-02-06 at 3 57 00 pm" src="https://user-images.githubusercontent.com/40863560/52379826-d27d5b80-2a28-11e9-9a76-85ac82aeb6d7.png">
