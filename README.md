@@ -1,9 +1,10 @@
 # Jeopardy!
 
-https://media.giphy.com/media/1dJTZUTgUjj4SRZYQT/giphy.gif
+<iframe src="https://giphy.com/embed/1dJTZUTgUjj4SRZYQT" width="480" height="349" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/jeopardy--alex-trebek-1dJTZUTgUjj4SRZYQT">via GIPHY</a></p>
 
 ## Authors
 Duy Thanh Vu
+and
 [Sally Haefling](https://github.com/SallyHaefling)
 
 ## Abstract
