@@ -10,36 +10,29 @@ import Game from './game.js';
 import $ from 'jquery';
 import jQuery from 'jquery';
 
-window.jQuery = $;
+// window.jQuery = $;
 
-window.round = new Round();
-
-window.game = new Game();
-
-let $cluesCard = $('.clue-js');
-// let cardId = round.roundClues[$cluesCard.index($(event.target))];
+let round = new Round();
+let game = new Game();
+let $cluesCard = $('.number');
 
 $('.start-game').on('click', function() {
-  domUpdates.startGame();
+  domUpdates.startGame(game, round);
   $('input').hide('slow');
   $('button').hide('slow');
-  // game.playerTurns();
 });
 
 $cluesCard.on('click', function() {
   domUpdates.displayQuestion(round.roundClues[$cluesCard.index($(event.target))].question)
-  // $cluesCard.index($(event.target)).text('').css('background-color', 'black')
-  // domUpdates.clearBoard();
+  domUpdates.disableClue();
 });
 
-$('body').on('click', '#submit-button', function (e, round) {
+$('body').on('click', '#submit-button', function (e) {
   e.preventDefault();
   findClue(e);
   console.log('player turn now', game.turn)
   domUpdates.removeQuestion();
-  // domUpdates.disableClue();
-  game.playerTurns();
-  // console.log(round.roundClues[$cluesCard.index($(event.target))]);
+  game.playerTurns(round);
 })
 
 

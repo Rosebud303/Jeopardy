@@ -5,27 +5,19 @@ import domUpdates from './domUpdates.js';
 class Round {
   constructor() {
     this.roundCategories = [];
-    this.roundTwoCategories = [];
     this.roundClues = [];
     this.finalRound = [];
   }
 
-  getFourNewCategories() {
-    for(var i = 0; i < 4; i++) {
-      this.roundTwoCategories.push(game.categories.pop());
-    }
-    domUpdates.displayCategories(this.roundTwoCategories);
-  }
-
   getFourCategoriesPerRound(game) {
-
+    this.roundCategories = []
     for(var i = 0; i < 4; i++) {
       this.roundCategories.push(game.categories.pop());
     }
-    domUpdates.displayCategories(this.roundCategories);
+    domUpdates.displayCategories(this.roundCategories)
   }
 
-  getCluesToPopulate() {
+  getCluesToPopulate(game) {
     let filterClues = this.roundCategories.map((category) => {
       return game.clues.reduce((acc, clue) => {
         if(data.categories[category] === clue.categoryId) {

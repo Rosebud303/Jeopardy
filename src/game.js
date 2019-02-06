@@ -13,11 +13,11 @@ class Game {
     this.currentPlayer = player;
   }
 
-  beginGame() {
+  beginGame(round) {
     this.parseData();
-    this.createRandomCategories(this);
-    round.getFourCategoriesPerRound();
-    round.getCluesToPopulate();
+    this.createRandomCategories();
+    round.getFourCategoriesPerRound(this);
+    round.getCluesToPopulate(this);
   }
 
   createPlayers(name1, name2, name3) {
@@ -29,12 +29,12 @@ class Game {
       this.players.push(player1, player2, player3); 
     }
     domUpdates.displayPlayersName();
-    domUpdates.displayPlayerScore();
+    domUpdates.displayPlayerScore(this);
   }
 
-  createRound() {
-    round.getFourCategoriesPerRound();
-  }
+  // createRound() {
+  //   round.getFourCategoriesPerRound();
+  // }
 
   parseData() {
     let dataVals = Object.values(data); //grabbing vals of data
@@ -50,7 +50,7 @@ class Game {
     }
   }
 
-  playerTurns() {
+  playerTurns(round) {
     this.turn++;
     if(this.currentPlayer === this.players[0]) {
       this.currentPlayer = this.players[1]
@@ -59,22 +59,20 @@ class Game {
     } else {
       this.currentPlayer = this.players[0]
     } 
-    if(this.turn >= 3 && this.turn < 7) {
+    if(this.turn >= 16) {
       this.round++
-      round.getFourNewCategories();
+      round.getFourCategoriesPerRound(this);
+      round.getCluesToPopulate(this);
     }
     console.log(this.currentPlayer)
-    //change color of turn? in domUpdates here
   }
 
   chooseWinner() {
-  // The winner is determined by the player with the highest 
-  //total score at the end of all rounds
-  let winner = this.players.sort((a, b) => {
-    return a.score - b.score;
-  }).pop();
-  console.log(winner.name);
-}
+    let winner = this.players.sort((a, b) => {
+      return a.score - b.score;
+    }).pop();
+    console.log(winner);
+  }
 }
 
 export default Game;
