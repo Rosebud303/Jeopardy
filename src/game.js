@@ -59,7 +59,7 @@ class Game {
     } else {
       this.currentPlayer = this.players[0]
     } 
-    if(this.turn >= 16) {
+    if(this.turn >= 3) {
       this.round++
       round.getFourCategoriesPerRound(this);
       round.getCluesToPopulate(this);

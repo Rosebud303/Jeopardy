@@ -42,20 +42,36 @@ let domUpdates = {
 
   disableClue() {
     $('.number').eq($('.number').index($(event.target))).hide('swing');
-    // console.log($('.clues-js').index($(event.target)));
+    console.log($('.number').index($(event.target)).answer);
+  },
+
+  displayAnswer(answer) {
+    $('.question-card').remove()
+    $('.answer-here').remove()
+    let newDiv = $(
+      `<section>
+        <h2>${answer}</h2>
+        <form>
+          <button id='confirm'>OK</button>
+        </form>
+      </section>`
+    );
+    $('.append-question').append(newDiv);
+    console.log('I made it in here');
   },
 
   displayQuestion(question) {
     let div = $(
         `<section class='append-question'>
             <h2 class='question-card'>${question}</h2>
-            <form>
+            <form class='answer-here'>
               <input id='answer-id' placeholder='Answer here...'>
               <button id='submit-button'>Submit</button>
             </form>
         </section>`
-    )
+    );
       $('main').append(div);
+      console.log(question)
   //on click we want it to hide the value
   //and display the card with the question
   },

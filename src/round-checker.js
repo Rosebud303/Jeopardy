@@ -10,7 +10,7 @@ class Round {
   }
 
   getFourCategoriesPerRound(game) {
-    this.roundCategories = []
+    // this.roundCategories = []
     for(var i = 0; i < 4; i++) {
       this.roundCategories.push(game.categories.pop());
     }

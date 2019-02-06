@@ -24,17 +24,22 @@ $('.start-game').on('click', function() {
 
 $cluesCard.on('click', function() {
   domUpdates.displayQuestion(round.roundClues[$cluesCard.index($(event.target))].question)
+  console.log(round.roundClues[$cluesCard.index($(event.target))].answer)
   domUpdates.disableClue();
 });
 
 $('body').on('click', '#submit-button', function (e) {
   e.preventDefault();
+  console.log(e)
   findClue(e);
-  console.log('player turn now', game.turn)
-  domUpdates.removeQuestion();
+  // console.log('player turn now', game.turn)
+  domUpdates.displayAnswer(round.roundClues[0].answer);
   game.playerTurns(round);
-})
+});
 
+$('body').on('click', '#confirm', function (e) {
+  domUpdates.removeQuestion();
+});
 
 function findClue(e){
   console.log('e', e);
