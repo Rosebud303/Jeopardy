@@ -32,10 +32,6 @@ class Game {
     domUpdates.displayPlayerScore(this);
   }
 
-  // createRound() {
-  //   round.getFourCategoriesPerRound();
-  // }
-
   parseData() {
     let dataVals = Object.values(data); //grabbing vals of data
     dataVals.shift(); //getting rid of 1st val which we dont need (version, etc)
@@ -59,11 +55,17 @@ class Game {
     } else {
       this.currentPlayer = this.players[0]
     } 
-    if(this.turn >= 16) {
+    if(this.turn >= 3) {
+      this.turn = 0;
       this.round++;
+      if(this.round === 16) {
+        this.round--;
+        this.chooseWinner();
+      }
       round.getFourCategoriesPerRound(this);
       round.getCluesToPopulate(this);
       domUpdates.displayRound(this);
+      domUpdates.showClue(this);
     }
     console.log(this.currentPlayer)
   }
