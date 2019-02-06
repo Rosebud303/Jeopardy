@@ -19,10 +19,6 @@ let domUpdates = {
     });
   },
 
-  // displayCurentScore() {
-
-  // },
-
   displayCategories(val) {
     $('.category-js').each((i, category) => {
       $(category).text(val[i])
