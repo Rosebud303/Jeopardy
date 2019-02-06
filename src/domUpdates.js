@@ -72,6 +72,15 @@ let domUpdates = {
   //and display the card with the question
   },
 
+  displayWinner(game) {
+    let winnerCard = $(
+        `<section class='append-card'>
+            <h2 class='winner-card'>You are the winner!</h2>
+        </section>`
+      )
+     $('main').append(winnerCard);
+  },
+
   removeQuestion() {
     $('.append-question').remove();
   }
