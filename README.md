@@ -29,13 +29,13 @@ npm test
 
 ## Built With
 
-JavaScript
-jQuery
-Webpack
-CSS
-HTML
-Mocha 
-Chai
+* JavaScript
+* jQuery
+* Webpack
+* CSS
+* HTML
+* Mocha 
+* Chai
 
 ## Our project:
 
