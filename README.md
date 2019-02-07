@@ -14,7 +14,7 @@ This was a one week 'Jeopardy!' project for Mod2 at Turing School of Software & 
 First, clone down the repo.
 
 ```bash
-git clone [remote-address] [what you want to name the repo]
+git clone 
 ```
 
 Once you have cloned the repo, install the library dependencies. Run:
