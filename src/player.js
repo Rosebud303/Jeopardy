@@ -9,11 +9,11 @@ class Player {
     this.score = score;
   }
   
-  updateScore(game) {
-    if(game.answerIndex === game.userAnswer) {
-      this.score += game.pointIndex;
-    } else if (game.answerIndex !== game.userAnswer){
-      this.score -= game.pointIndex;
+  updateScore(answerIndex, userAnswer, pointIndex) {
+    if(answerIndex === userAnswer) {
+      this.score += pointIndex;
+    } else if (answerIndex !== userAnswer){
+      this.score -= pointIndex;
     }
   }
 }

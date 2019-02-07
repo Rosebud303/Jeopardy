@@ -30,7 +30,7 @@ $('body').on('click', '#submit-button', function (e) {
   e.preventDefault();
   game.playerTurns(round);
   game.saveUserAnswer($('.answer-id').val())
-  game.currentPlayer.updateScore(game);
+  game.currentPlayer.updateScore(game.answerIndex, game.userAnswer, game.pointIndex);
   domUpdates.displayAnswer(game, game.answerIndex, game.pointIndex);
   domUpdates.displayPlayerScore(game);
 });
@@ -46,4 +46,5 @@ $('.quit-game').on('click', function() {
 $('.quit-game').on('click', function() {
   location.reload(true);
 });
+
 
