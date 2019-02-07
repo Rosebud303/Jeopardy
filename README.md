@@ -2,7 +2,9 @@
 
 ## Authors
 Duy Thanh Vu
+
 and
+
 [Sally Haefling](https://github.com/SallyHaefling)
 
 ## Abstract
