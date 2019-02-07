@@ -11,7 +11,7 @@ This was a one week 'Jeopardy!' project for Mod2 at Turing School of Software & 
 
 ## Setup
 
-After one person has forked the repo, everyone should clone down the forked repo. Since you don't want to name your project "gametime-starter", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments):
+First, clone down the repo.
 
 ```bash
 git clone [remote-address] [what you want to name the repo]
