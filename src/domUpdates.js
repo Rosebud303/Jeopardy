@@ -50,7 +50,7 @@ let domUpdates = {
     let newDiv = $(
       `<section>
         <h1>The Correct answer was ${answer}</h1>
-        <h1>-${points} points...</h1>
+        <h1>-${points} points...<h/1>
         <form>
           <button id='confirm'>OK</button>
         </form>
@@ -59,7 +59,7 @@ let domUpdates = {
     let correctDiv = $(
       `<section>
         <h1>You are Correct!</h1>
-        <h1 class="pointss">+${points}!!!</h1>
+        <h1>+${points}!!!</h1>
         <form>
           <button id='confirm'>OK</button>
         </form>
