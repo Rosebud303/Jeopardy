@@ -31,17 +31,21 @@ class Round {
       [clue[i], clue[j]] = [clue[j], clue[i]];  
     }
     })
-    this.filterCluesToDisplayOnDom(filterClues); 
+    console.log(filterClues)
+    const alteredClues = this.filterCluesToDisplayOnDom(filterClues); 
+    domUpdates.displayPointValues(alteredClues);
   }
 
   filterCluesToDisplayOnDom(cluesContainer) {
-    this.roundClues = cluesContainer.reduce((acc, clue) => {
+    const clue = cluesContainer.reduce((acc, clue) => {
      for(let i = 1; i < 5; i++) {
       acc.push(clue.find(point => point.pointValue === i * 100))
      }
       return acc
     }, [])
-    domUpdates.displayPointValues(this.roundClues);
+    console.log(clue)
+    this.roundClues = clue;
+    return clue;
   }
 
 }

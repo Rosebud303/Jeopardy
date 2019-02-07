@@ -2,7 +2,6 @@ import chai from 'chai';
 import Player from '../src/player.js';
 const expect = chai.expect;
 
-
 describe('Player', function()  {
   let player;
   beforeEach(function() {

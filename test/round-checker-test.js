@@ -30,4 +30,20 @@ describe('Round', function() {
 
     expect(round.roundCategories.length).to.equal(4);
   }); 
+
+  it('should display clues on the page', function() {
+    const filterClues = [
+      [
+        {answer: 'tripe', categoryId: 9, pointValue: 400},
+        {answer: 'tripe', categoryId: 9, pointValue: 400},
+        {answer: 'tripe', categoryId: 9, pointValue: 400},
+        {answer: 'tripe', categoryId: 9, pointValue: 400},
+        {answer: 'tripe', categoryId: 9, pointValue: 400},
+        {answer: 'tripe', categoryId: 9, pointValue: 400},
+        {answer: 'tripe', categoryId: 9, pointValue: 400}
+      ]
+    ];
+    const filterCluesFunc = round.filterCluesToDisplayOnDom(filterClues);
+    expect(filterCluesFunc).to.equal()
+  })
 })

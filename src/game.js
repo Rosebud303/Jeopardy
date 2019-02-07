@@ -13,7 +13,6 @@ class Game {
     this.currentPlayer = player;
     this.answerIndex;
     this.pointIndex;
-
   }
 
   beginGame(round) {
@@ -66,7 +65,7 @@ class Game {
       } else {
           this.currentPlayer = this.players[0]
       } 
-      if(this.turn >= 3) {
+      if(this.turn >= 16) {
         this.turn = 0;
         this.round++;
         if(this.round === 4) {
@@ -78,9 +77,11 @@ class Game {
       round.getCluesToPopulate(this);
       domUpdates.displayRound(this);
       domUpdates.showClue(this);
-    }  
-  }
+       
+    }
+    console.log(this.currentPlayer)
 
+}
   chooseWinner() {
     let winner = this.players.sort((a, b) => {
       return a.score - b.score;
