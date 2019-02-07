@@ -51,14 +51,4 @@ describe('Game', function() {
     expect(game.turn).to.equal(1);
 
   });
-
-  it('should increase the turn counter with every invocation', function() {
-    
-    expect(game.turn).to.equal(0);
-
-    game.playerTurns(round);
-
-    expect(game.turn).to.equal(1);
-
-  });
 });

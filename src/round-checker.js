@@ -7,20 +7,20 @@ class Round {
     this.roundCategories = [];
     this.roundClues = [];
     this.finalRound = [];
-  };
+  }
 
   getFourCategoriesPerRound(game) {
     for(var i = 0; i < 4; i++) {
       this.roundCategories.push(game.categories.pop());
     }
-    domUpdates.displayCategories(this.roundCategories)
-  };
+    domUpdates.displayCategories(this.roundCategories);
+  }
 
   getCluesToPopulate(game) {
     let filterClues = this.roundCategories.map((category) => {
       return game.clues.reduce((acc, clue) => {
         if(data.categories[category] === clue.categoryId) {
-          acc.push(clue)
+          acc.push(clue);
         }
         return acc;
       }, []);
@@ -33,18 +33,18 @@ class Round {
     });
     const alteredClues = this.filterCluesToDisplayOnDom(filterClues); 
     domUpdates.displayPointValues(alteredClues);
-  };
+  }
 
   filterCluesToDisplayOnDom(cluesContainer) {
     const clue = cluesContainer.reduce((acc, clue) => {
      for(let i = 1; i < 5; i++) {
-      acc.push(clue.find(point => point.pointValue === i * 100))
+      acc.push(clue.find(point => point.pointValue === i * 100));
      }
-      return acc
+      return acc;
     }, []);
     this.roundClues = clue;
     return clue;
-  };
+  }
 
 }
 
