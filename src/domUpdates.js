@@ -58,7 +58,6 @@ let domUpdates = {
       </section>`
     );
     $('.append-question').append(newDiv);
-    console.log('I made it in here');
   },
 
   showClue(game) {
@@ -76,9 +75,6 @@ let domUpdates = {
         </section>`
     );
       $('main').append(div);
-      console.log(question)
-  //on click we want it to hide the value
-  //and display the card with the question
   },
 
   displayWinner(game) {

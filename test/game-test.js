@@ -1,6 +1,5 @@
 import chai from 'chai';
 import Game from '../src/game.js';
-// import Round from './round-checker.js';
 import Player from '../src/player.js';
 import spies from 'chai-spies';
 import domUpdates from '../src/domUpdates.js';
@@ -17,7 +16,6 @@ describe('Game', function() {
   let round;
   beforeEach(function() {
     game = new Game();
-    // round = new Round();
   });
 
   it('should be an instance of game', function() {
@@ -30,12 +28,12 @@ describe('Game', function() {
     expect(game.players).to.deep.equal([]);
     expect(game.clues).to.deep.equal([]);
     expect(game.categories).to.deep.equal([]);
-    expect(game.round).to.equal(0);
+    expect(game.round).to.equal(1);
     expect(game.turn).to.equal(0);
     expect(game.currentPlayer).to.equal(game.players[game.turn]);
+    expect(game.answerIndex).to.equal(game.answerIndex);
+    expect(game.pointIndex).to.equal(game.pointIndex);
   });
-
-  it
 
   it('should only have three players per game', function() {
 
@@ -43,7 +41,6 @@ describe('Game', function() {
     expect(game.players.length).to.deep.equal(3);
 
   });
-
 
   it('should increment turns for each player', function() {
 
@@ -55,10 +52,13 @@ describe('Game', function() {
 
   });
 
-  it('should choose winner at the end of all rounds', function() {
-    let winner = game.players.sort((a, b) => {
-    return a.score - b.score;
-  }).pop();
-    expect(game.players.length).to.deep.equal(0)
-  })
+  it('should increase the turn counter with every invocation', function() {
+    
+    expect(game.turn).to.equal(0);
+
+    game.playerTurns(round);
+
+    expect(game.turn).to.equal(1);
+
+  });
 });

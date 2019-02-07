@@ -18,13 +18,11 @@ $('.start-game').on('click', function() {
 });
 
 $cluesCard.on('click', function(e) {
-  domUpdates.displayQuestion(round.roundClues[$cluesCard.index($(event.target))].question)
-  // console.log(round.roundClues[$cluesCard.index($(event.target))].answer)
   let clueId = $cluesCard.index($(event.target))
+  domUpdates.displayQuestion(round.roundClues[clueId].question)
   game.answerSaver(round.roundClues[clueId].answer);
+  console.log(game.answerIndex)
   game.pointSaver(round.roundClues[clueId].pointValue);
-  console.log(game.answerIndex);
-  console.log(game.pointIndex);
   domUpdates.disableClue();
 });
 
@@ -48,8 +46,4 @@ $('.quit-game').on('click', function() {
 $('.quit-game').on('click', function() {
   location.reload(true);
 })
-
-
-
-
 

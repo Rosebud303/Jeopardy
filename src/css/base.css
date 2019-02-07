@@ -170,16 +170,17 @@ main {
   height: 200px;
 }
 
-#answer-id {
+.answer-id {
   height: 30px;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-right: none;
   border-radius: 10px 0px 0px 10px;
   font-size: 15px;
   padding: 10px;
 }
 
 #submit-button {
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 0px 10px 10px 0px;
   font-size: 15px;
   background: cornflowerblue;
