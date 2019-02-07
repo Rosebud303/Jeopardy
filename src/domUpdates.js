@@ -44,22 +44,32 @@ let domUpdates = {
     $('.number').eq($('.number').index($(event.target))).hide('swing');
   },
 
-  displayAnswer(answer) {
+  displayAnswer(game, answer, points) {
     $('.question-card').remove()
     $('.answer-here').remove()
     let newDiv = $(
       `<section>
-        <h1>${answer}</h1>
+        <h1>The Correct answer was ${answer}</h1>
+        <h1 class="pointss">-${points} points...<h/1>
         <form>
           <button id='confirm'>OK</button>
         </form>
       </section>`
     );
-    $('.append-question').append(newDiv);
-  },
-
-  showClue(game) {
-     $('.number').show();
+    let correctDiv = $(
+      `<section>
+        <h1>You are Correct!</h1>
+        <h1 class="pointss">+${points}!!!</h1>
+        <form>
+          <button id='confirm'>OK</button>
+        </form>
+      </section>`  
+      );
+    if(game.answerIndex === game.userAnswer) {
+      $('.append-question').append(correctDiv);
+    } else {
+      $('.append-question').append(newDiv);
+    }
   },
 
   displayQuestion(question) {
