@@ -18,15 +18,16 @@ header {
 
 .logo {
   border-radius: 20px;
+  box-shadow: 8px 5px 5px grey;
   height: 250px;
   margin: 20px;
   width: 425px;
-  box-shadow: 8px 5px 5px grey;
 }
 
 .header-box {
-  border: 4px solid black;
+  background-color: #F9E6EE;
   border-radius: 10px;
+  border: 4px solid black;
   box-shadow: 8px 5px 5px grey;
   color: #743E93;
   font-size: 20px;
@@ -38,6 +39,8 @@ header {
 }
 
 .points {
+  font-size: 18px;
+  font-weight: bold;
   margin-top: 8px;
 } 
 
@@ -59,8 +62,8 @@ form {
 
 .start,
 .quit {
-  text-align: center;
   margin-top: 10px;
+  text-align: center;
 }
 
 .start-game {
@@ -107,8 +110,8 @@ main {
 .category {
   border-radius: 10px;
   box-shadow: 8px 5px 5px grey;
-  margin-top: 20px;
   height: 100px;
+  margin-top: 20px;
   padding: 5px;
   text-align: center;
   width: 225px;
@@ -143,8 +146,10 @@ main {
 .append-question {
   background: #9871d9;
   border-radius: 10px;
-  border: 5px solid black;
+  border: 4px solid black;
+  box-shadow: 8px 8px 10px black;
   height: 350px;
+  margin-top: 145px;
   padding: 50px;
   position: absolute;
   text-align: center;
@@ -167,27 +172,30 @@ main {
 
 .question-card,
 .winner-card {
-  height: 200px;
+  font-size: 30px;
+  height: 115px;
 }
 
 .answer-id {
-  height: 30px;
-  border: 2px solid black;
-  border-right: none;
   border-radius: 10px 0px 0px 10px;
-  font-size: 15px;
+  border-right: none;
+  border: 2px solid black;
+  box-shadow: 8px 5px 5px black;
+  font-size: 30px;
+  height: 45px;
   padding: 10px;
 }
 
 #submit-button {
-  background: cornflowerblue;
+  background: #F9E6EE;
   border: 2px solid black;
   border-radius: 0px 10px 10px 0px;
-  font-size: 15px;
+  box-shadow: 8px 5px 5px black;
+  font-size: 30px;
 }
 
 #confirm {
-  background: cornflowerblue;
+  background: #F9E6EE;
   border: 3px solid;
   border-radius: 20px;
   height: 30px;
