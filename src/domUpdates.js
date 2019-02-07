@@ -15,23 +15,8 @@ let domUpdates = {
     });
   },
 
-  disableReset(){
-    $('.reset-button').attr('disabled', 'disabled');
-},
-
   disableQuit(){
-    $('.quit-button').attr('disabled', 'disabled');
-},
-
-//fix these enabled funcs below
-enableReset() {
-  $('.reset-button').attr('disabled', false);
-
-},
-
-enableQuit() {
-  $('.quit-button').attr('disabled', false);
-
+    $('.quit-game').prop('disabled', true);
 },
 
   displayRound(game) {
@@ -56,17 +41,10 @@ enableQuit() {
     });
   },
 
-  displayBoard() {
-    //needs to be able to reappend cards to page
-    //cards that have been used should no longer be there as well
-
-  },
-
   disableClue() {
     $('.number').eq($('.number').index($(event.target))).hide('swing');
     // console.log($('.number').index($(event.target)).answer);
   },
-
 
   displayAnswer(answer) {
     $('.question-card').remove()

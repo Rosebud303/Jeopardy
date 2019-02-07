@@ -16,6 +16,7 @@ class Player {
     } else if (game.answerIndex.toLowerCase() !== $('.answer-id').val().toLowerCase()){
       this.score -= game.pointIndex;
     }
+  }
 }
 
 export default Player;
