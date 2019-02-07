@@ -19,4 +19,10 @@ describe('Player', function()  {
     expect(player.score).to.equal(0);
   });
 
+//(can nest describe blocks): describe updateScore
+//2 it blocks - should increment player score when answer correct and decrement when incorrect
+//pass through args that make if statement run for 1st it
+//pass in args that make else statement run for 2nd it
+//^ way to decouple by passing in minimal info
+
 });
