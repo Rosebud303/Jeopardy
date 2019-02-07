@@ -3,11 +3,36 @@ import Round from './round-checker.js';
 
 let domUpdates = {
 
+  startGame(game, round) {
+    console.log(game)
+    game.createPlayers($('.input').eq(0).val(), $('.input').eq(1).val(), $('.input').eq(2).val()); 
+    game.beginGame(round);
+  },
+
   displayPlayersName() {
     $('.player-js').each((i, name) => {
       $(name).text($('.input').eq(i).val());
     });
   },
+
+  disableReset(){
+    $('.reset-button').attr('disabled', 'disabled');
+},
+
+  disableQuit(){
+    $('.quit-button').attr('disabled', 'disabled');
+},
+
+//fix these enabled funcs below
+enableReset() {
+  $('.reset-button').attr('disabled', false);
+
+},
+
+enableQuit() {
+  $('.quit-button').attr('disabled', false);
+
+},
 
   displayRound(game) {
       $('.round-js').text(game.round);
@@ -29,13 +54,6 @@ let domUpdates = {
     $('.number').each((i, point) => {
       $(point).text(points[i].pointValue)
     });
-  },
-  
-  startGame(game, round) {
-    console.log(game)
-    game.createPlayers($('.input').eq(0).val(), $('.input').eq(1).val(), $('.input').eq(2).val()); 
-    game.beginGame(round);
-
   },
 
   displayBoard() {
