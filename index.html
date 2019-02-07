@@ -1,11 +1,69 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Gametime Starter Kit</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,800" rel="stylesheet">
+    <title>Jeopardy!</title>
   </head>
   <body>
-    <h1>Gametime Starter Kit</h1>
-
-    <img src="/images/turing-logo.png" alt="turing logo" height="100px" width="100px">
+    <header>
+      <div class="header-box">
+        <h3 class="round">Round</h3>
+        <h3 class="round-js">1</h3>
+      </div>
+      <div class="player-box header-box">
+        <h3 class="player-js">Player 1</h3>
+        <p class="points points-js">$0</p>
+      </div>
+      <img class = "logo" src="/images/logo.jpg">
+      <div class="player-box header-box">
+        <h3 class="player-js">Player 2</h3>
+        <p class="points points-js">$0</p>
+      </div>
+      <div class="player-box header-box">
+        <h3 class="player-js">Player 3</h3>
+        <p class="points points-js">$0</p>
+      </div>
+    </header>
+    <form>
+      <input placeholder="Player 1 name..." class="input player-1 input-js">
+      <input placeholder="Player 2 name..." class="input player-2 input-js">
+      <input placeholder="Player 3 name..." class="input player-3 input-js">
+    </form>
+    <div class="start">
+      <button class="start-game">Start Game</button>
+    </div>
+      <div class="quit">
+      <button class="quit-game" disabled=true>Quit Game</button>
+    </div>
+    <main>
+      <section class="row">
+        <h3 class="category category-js">Category</h3>
+        <h3 class="clue clue-js"><span class="number">100</span></h3> 
+        <h3 class="clue clue-js"><span class="number">200</span></h3> 
+        <h3 class="clue clue-js"><span class="number">300</span></h3> 
+        <h3 class="clue clue-js"><span class="number">400</span></h3> 
+      </section>
+      <section class="row">
+        <h3 class="category category-js">Category</h3>
+        <h3 class="clue clue-js"><span class="number">100</span></h3> 
+        <h3 class="clue clue-js"><span class="number">200</span></h3> 
+        <h3 class="clue clue-js"><span class="number">300</span></h3> 
+        <h3 class="clue clue-js"><span class="number">400</span></h3> 
+      </section>
+      <section class="row">
+        <h3 class="category category-js">Category</h3>
+        <h3 class="clue clue-js"><span class="number">100</span></h3> 
+        <h3 class="clue clue-js"><span class="number">200</span></h3> 
+        <h3 class="clue clue-js"><span class="number">300</span></h3> 
+        <h3 class="clue clue-js"><span class="number">400</span></h3> 
+      </section>
+      <section class="row">
+        <h3 class="category category-js">Category</h3>
+        <h3 class="clue clue-js"><span class="number">100</span></h3> 
+        <h3 class="clue clue-js"><span class="number">200</span></h3> 
+        <h3 class="clue clue-js"><span class="number">300</span></h3> 
+        <h3 class="clue clue-js"><span class="number">400</span></h3> 
+      </section>
+    </main>
   </body>
 </html>
