@@ -10,8 +10,7 @@ class Player {
   }
   
   updateScore(game) {
-    console.log($('.answer-id').val())
-    if(game.answerIndex.toLowerCase() === $('.answer-id').val().toLowerCase()){
+    if(game.answerIndex.toLowerCase() === $('.answer-id').val().toLowerCase()) {
       this.score += game.pointIndex;
     } else if (game.answerIndex.toLowerCase() !== $('.answer-id').val().toLowerCase()){
       this.score -= game.pointIndex;

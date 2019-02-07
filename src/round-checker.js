@@ -13,14 +13,14 @@ class Round {
     for(var i = 0; i < 4; i++) {
       this.roundCategories.push(game.categories.pop());
     }
-    domUpdates.displayCategories(this.roundCategories)
+    domUpdates.displayCategories(this.roundCategories);
   }
 
   getCluesToPopulate(game) {
     let filterClues = this.roundCategories.map((category) => {
       return game.clues.reduce((acc, clue) => {
         if(data.categories[category] === clue.categoryId) {
-          acc.push(clue)
+          acc.push(clue);
         }
         return acc;
       }, []);
@@ -30,8 +30,7 @@ class Round {
       const j = Math.floor(Math.random() * (i + 1));
       [clue[i], clue[j]] = [clue[j], clue[i]];  
     }
-    })
-    console.log(filterClues)
+    });
     const alteredClues = this.filterCluesToDisplayOnDom(filterClues); 
     domUpdates.displayPointValues(alteredClues);
   }
@@ -39,11 +38,10 @@ class Round {
   filterCluesToDisplayOnDom(cluesContainer) {
     const clue = cluesContainer.reduce((acc, clue) => {
      for(let i = 1; i < 5; i++) {
-      acc.push(clue.find(point => point.pointValue === i * 100))
+      acc.push(clue.find(point => point.pointValue === i * 100));
      }
-      return acc
-    }, [])
-    console.log(clue)
+      return acc;
+    }, []);
     this.roundClues = clue;
     return clue;
   }

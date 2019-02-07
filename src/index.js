@@ -30,7 +30,6 @@ $('body').on('click', '#submit-button', function (e) {
   e.preventDefault();
   game.playerTurns(round);
   game.currentPlayer.updateScore(game);
-  console.log(game.currentPlayer)
   domUpdates.displayAnswer(game.answerIndex);
   domUpdates.displayPlayerScore(game);
 });

@@ -4,7 +4,6 @@ import Round from './round-checker.js';
 let domUpdates = {
 
   startGame(game, round) {
-    console.log(game)
     game.createPlayers($('.input').eq(0).val(), $('.input').eq(1).val(), $('.input').eq(2).val()); 
     game.beginGame(round);
   },
@@ -43,7 +42,6 @@ let domUpdates = {
 
   disableClue() {
     $('.number').eq($('.number').index($(event.target))).hide('swing');
-    // console.log($('.number').index($(event.target)).answer);
   },
 
   displayAnswer(answer) {
@@ -77,10 +75,10 @@ let domUpdates = {
       $('main').append(div);
   },
 
-  displayWinner(game) {
+  displayWinner(winner) {
     let winnerCard = $(
         `<section class='append-card'>
-            <h2 class='winner-card'>You are the winner!</h2>
+            <h2 class='winner-card'>${winner} is the winner!</h2>
         </section>`
       )
      $('main').append(winnerCard);
