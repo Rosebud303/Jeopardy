@@ -19,7 +19,9 @@ let $cluesCard = $('.number');
 $('.start-game').on('click', function() {
   domUpdates.startGame(game, round);
   $('input').hide('slow');
-  $('button').hide('slow');
+  $('.start-game').hide('slow');
+  domUpdates.enableReset();
+  domUpdates.enableQuit();
 });
 
 $cluesCard.on('click', function() {
@@ -39,6 +41,13 @@ $('body').on('click', '#submit-button', function (e) {
 
 $('body').on('click', '#confirm', function (e) {
   domUpdates.removeQuestion();
+
+$('.reset-game').on('click', function() {
+  domUpdates.disableReset();
+});
+
+$('.quit-game').on('click', function() {
+  domUpdates.disableQuit();
 });
 
 function findClue(e){
