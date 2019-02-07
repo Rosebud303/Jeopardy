@@ -1,8 +1,8 @@
 import chai from 'chai';
 import Game from '../src/game.js';
 import Player from '../src/player.js';
-import spies from 'chai-spies';
 import domUpdates from '../src/domUpdates.js';
+import spies from 'chai-spies';
 chai.use(spies);
 const expect = chai.expect;
 

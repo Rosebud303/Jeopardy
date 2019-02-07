@@ -7,7 +7,7 @@ class Player {
   constructor(name, score = 0) {
     this.name = name;
     this.score = score;
-  }
+  };
   
   updateScore(game) {
     console.log($('.answer-id').val())
@@ -16,7 +16,7 @@ class Player {
     } else if (game.answerIndex.toLowerCase() !== $('.answer-id').val().toLowerCase()){
       this.score -= game.pointIndex;
     }
-  }
+  };
 }
 
 export default Player;
