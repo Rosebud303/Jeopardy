@@ -6,7 +6,6 @@
     this.categoryId = categoryId;
   }
 
-  //check answers method
 }
 
 export default Clues;

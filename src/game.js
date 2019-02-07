@@ -13,7 +13,6 @@ class Game {
     this.currentPlayer = player;
     this.answerIndex;
     this.pointIndex;
-
   }
 
   beginGame(round) {
@@ -79,7 +78,6 @@ class Game {
       domUpdates.displayRound(this);
       domUpdates.showClue(this);
     }
-    
     console.log(this.currentPlayer)
   }
 
