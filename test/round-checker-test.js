@@ -26,7 +26,6 @@ describe('Round', function() {
   });
 
   it('should start game with four random categories per round', function () {
-    // game.beginGame();
     round.getFourCategoriesPerRound(game);
 
     expect(round.roundCategories.length).to.equal(4);

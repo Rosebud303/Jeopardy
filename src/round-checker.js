@@ -10,7 +10,6 @@ class Round {
   }
 
   getFourCategoriesPerRound(game) {
-    // this.roundCategories = []
     for(var i = 0; i < 4; i++) {
       this.roundCategories.push(game.categories.pop());
     }
@@ -42,7 +41,6 @@ class Round {
      }
       return acc
     }, [])
-    console.log(this.roundClues)
     domUpdates.displayPointValues(this.roundClues);
   }
 
