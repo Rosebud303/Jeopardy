@@ -13,6 +13,7 @@ class Game {
     this.currentPlayer = player;
     this.answerIndex;
     this.pointIndex;
+    this.userAnswer;
   }
 
   beginGame(round) {
@@ -22,8 +23,12 @@ class Game {
     round.getCluesToPopulate(this);
   }
 
+  saveUserAnswer(userAnswer) {
+    this.userAnswer = userAnswer.toLowerCase();
+  }
+
   answerSaver(answerIndex) {
-    this.answerIndex = answerIndex;
+    this.answerIndex = answerIndex.toLowerCase();
   }
 
   pointSaver(pointIndex) {
@@ -85,7 +90,7 @@ class Game {
       return a.score - b.score;
     }).pop();
     this.players = newWinner.name;
-      }
+    }
 }
 
 export default Game;

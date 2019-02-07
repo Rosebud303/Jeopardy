@@ -10,9 +10,9 @@ class Player {
   }
   
   updateScore(game) {
-    if(game.answerIndex.toLowerCase() === $('.answer-id').val().toLowerCase()) {
+    if(game.answerIndex === game.userAnswer) {
       this.score += game.pointIndex;
-    } else if (game.answerIndex.toLowerCase() !== $('.answer-id').val().toLowerCase()){
+    } else if (game.answerIndex !== game.userAnswer){
       this.score -= game.pointIndex;
     }
   }
