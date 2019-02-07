@@ -64,15 +64,16 @@ enableQuit() {
 
   disableClue() {
     $('.number').eq($('.number').index($(event.target))).hide('swing');
-    console.log($('.number').index($(event.target)).answer);
+    // console.log($('.number').index($(event.target)).answer);
   },
+
 
   displayAnswer(answer) {
     $('.question-card').remove()
     $('.answer-here').remove()
     let newDiv = $(
       `<section>
-        <h2>${answer}</h2>
+        <h1>${answer}</h1>
         <form>
           <button id='confirm'>OK</button>
         </form>
@@ -91,7 +92,7 @@ enableQuit() {
         `<section class='append-question'>
             <h2 class='question-card'>${question}</h2>
             <form class='answer-here'>
-              <input id='answer-id' placeholder='Answer here...'>
+              <input class='answer-id' placeholder='Answer here...'>
               <button id='submit-button'>Submit</button>
             </form>
         </section>`
