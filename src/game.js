@@ -70,6 +70,7 @@ class Game {
     } else {
       this.currentPlayer = this.players[0];
     } 
+    //let endOfRound = (this.turn >= 16);
     if(this.turn >= 16) {
       this.turn = 0;
       this.round++;
