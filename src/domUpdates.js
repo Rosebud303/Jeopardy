@@ -3,11 +3,36 @@ import Round from './round-checker.js';
 
 let domUpdates = {
 
+  startGame(game, round) {
+    console.log(game)
+    game.createPlayers($('.input').eq(0).val(), $('.input').eq(1).val(), $('.input').eq(2).val()); 
+    game.beginGame(round);
+  },
+
   displayPlayersName() {
     $('.player-js').each((i, name) => {
       $(name).text($('.input').eq(i).val());
     });
   },
+
+  disableReset(){
+    $('.reset-button').attr('disabled', 'disabled');
+},
+
+  disableQuit(){
+    $('.quit-button').attr('disabled', 'disabled');
+},
+
+//fix these enabled funcs below
+enableReset() {
+  $('.reset-button').attr('disabled', false);
+
+},
+
+enableQuit() {
+  $('.quit-button').attr('disabled', false);
+
+},
 
   displayRound(game) {
       $('.round-js').text(game.round);
@@ -19,10 +44,6 @@ let domUpdates = {
     });
   },
 
-  // displayCurentScore() {
-
-  // },
-
   displayCategories(val) {
     $('.category-js').each((i, category) => {
       $(category).text(val[i])
@@ -33,13 +54,6 @@ let domUpdates = {
     $('.number').each((i, point) => {
       $(point).text(points[i].pointValue)
     });
-  },
-  
-  startGame(game, round) {
-    console.log(game)
-    game.createPlayers($('.input').eq(0).val(), $('.input').eq(1).val(), $('.input').eq(2).val()); 
-    game.beginGame(round);
-
   },
 
   displayBoard() {
@@ -70,6 +84,15 @@ let domUpdates = {
       $('main').append(div);
   //on click we want it to hide the value
   //and display the card with the question
+  },
+
+  displayWinner(game) {
+    let winnerCard = $(
+        `<section class='append-card'>
+            <h2 class='winner-card'>You are the winner!</h2>
+        </section>`
+      )
+     $('main').append(winnerCard);
   },
 
   removeQuestion() {

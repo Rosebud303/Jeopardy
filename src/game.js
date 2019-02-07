@@ -58,9 +58,10 @@ class Game {
     if(this.turn >= 3) {
       this.turn = 0;
       this.round++;
-      if(this.round === 16) {
-        this.round--;
+      if(this.round === 4) {
         this.chooseWinner();
+        domUpdates.displayWinner(this);
+        return;
       }
       round.getFourCategoriesPerRound(this);
       round.getCluesToPopulate(this);
