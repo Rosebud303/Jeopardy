@@ -10,7 +10,6 @@ class Round {
   }
 
   getFourCategoriesPerRound(game) {
-    // this.roundCategories = []
     for(var i = 0; i < 4; i++) {
       this.roundCategories.push(game.categories.pop());
     }
@@ -32,18 +31,21 @@ class Round {
       [clue[i], clue[j]] = [clue[j], clue[i]];  
     }
     })
-    this.filterCluesToDisplayOnDom(filterClues); 
+    console.log(filterClues)
+    const alteredClues = this.filterCluesToDisplayOnDom(filterClues); 
+    domUpdates.displayPointValues(alteredClues);
   }
 
   filterCluesToDisplayOnDom(cluesContainer) {
-    this.roundClues = cluesContainer.reduce((acc, clue) => {
+    const clue = cluesContainer.reduce((acc, clue) => {
      for(let i = 1; i < 5; i++) {
       acc.push(clue.find(point => point.pointValue === i * 100))
      }
       return acc
     }, [])
-    console.log(this.roundClues)
-    domUpdates.displayPointValues(this.roundClues);
+    console.log(clue)
+    this.roundClues = clue;
+    return clue;
   }
 
 }
