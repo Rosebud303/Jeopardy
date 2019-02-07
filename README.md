@@ -49,3 +49,11 @@ npm test
 <img width="707" alt="screen shot 2019-02-06 at 3 56 37 pm" src="https://user-images.githubusercontent.com/40863560/52379815-c85b5d00-2a28-11e9-8242-17c4d29e2ae3.png">
 
 <img width="703" alt="screen shot 2019-02-06 at 3 57 00 pm" src="https://user-images.githubusercontent.com/40863560/52379826-d27d5b80-2a28-11e9-9a76-85ac82aeb6d7.png">
+
+### Link to our DTR:
+
+https://gist.github.com/SallyHaefling/1c7330b1ed678f25ed3882a73f5cf00f
+
+### Link to our Trello (we used Trello at first and then moved to issues):
+
+https://trello.com/b/F4i1SohO/gametime
