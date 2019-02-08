@@ -24,10 +24,11 @@ class DD extends Round {
     }
   }
 
-  checkInput(clueAnswer, userAnswer){
+  checkInput(game, clueAnswer, userAnswer){
+    console.log(game.currentPlayer)
     if(clueAnswer === userAnswer) {
       game.currentPlayer.score += this.playerWage;
-    } else if (answerIndex !== userAnswer){
+    } else if (clueAnswer !== userAnswer){
       game.currentPlayer.score -= this.playerWage;
     }
   }
