@@ -96,6 +96,31 @@ let domUpdates = {
 
   removeQuestion() {
     $('.append-question').remove();
+  },
+
+  displayDailyDouble(){
+    let div = $(
+      `<div class="daily-double-section">
+        <h2>Daily Double</h2>
+        <input class="wager-input" type="number" placeholder="place wager here"/>
+        <button class="submit-wager">Submit Button</button>
+      </div>`
+      )
+    $('main').append(div);
+  },
+  wageError(){
+    let div = $(
+      `<div class="wage-error">
+        <h2>please enter a value amount</h2>
+      </div>`
+      )
+    $('main').append(div);
+    setTimeout(() => {
+      $(".wage-error").remove()
+    }, 2000)
+  },
+  displayCard(){
+    $('.daily-double-section').remove()
   }
 }
 
