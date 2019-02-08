@@ -1,23 +1,38 @@
-import Game from './game.js';
-import Player from './player.js';
-import data from './data.js';
 import Round from './round-checker.js';
-import domUpdates from './domUpdates.js';
+import Game from './game.js';
+import domUpdates from "./domUpdates.js"
 
-class DD extends Game {
-  constructor(categories, clues, players) {
-    super(categories, clues, players);
+class DD extends Round {
+  constructor(){
+    super()
+    this.playerWage;
+  }
+  assignDD(round, game) {
+    for(var i = 0; i < game.round; i++){
+      let dailyDouble = Math.floor(Math.random()* 16)
+      round.roundClues[dailyDouble].categoryId = "daily"
+      console.log(round.roundClues[dailyDouble])
+    }
   }
 
-  pickClueAtRandom() {
-
+  setWager(value, game) {
+    if(game.currentPlayer.score >= value) {
+      this.playerWage = value;
+      domUpdates.displayCard();
+    }else{
+      domUpdates.wageError();
+    }
   }
 
-makeWager() {
-  //have that wager ++ or  - - current player score
-  //check wager against player score to not allow them to bet over
-  //then do domUpdates
+  checkInput(clueAnswer, userAnswer){
+    if(clueAnswer === userAnswer) {
+      game.currentPlayer.score += this.playerWage;
+    } else if (answerIndex !== userAnswer){
+      game.currentPlayer.score -= this.playerWage;
+    }
   }
+
 }
 
+export default DD;
 
