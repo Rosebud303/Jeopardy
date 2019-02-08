@@ -40,7 +40,7 @@ npm test
 ## Our project:
 
 
-![jeopsrdy-full-2](https://user-images.githubusercontent.com/40863560/52424907-2b480500-2ab8-11e9-8873-1b2169379e2c.png)
+![new-jeo](https://user-images.githubusercontent.com/40863560/52452462-48a0c180-2b00-11e9-9226-a6e1885e15fd.jpg)
 
 
 ### Hover states:
