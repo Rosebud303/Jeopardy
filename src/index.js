@@ -59,7 +59,7 @@ $('.quit-game').on('click', function() {
 $(window).on("click", function(event){
   if($(event.target).hasClass('submit-wager')){
     dd.setWager($('.wager-input').val(), game)
-    dd.checkInput(game.answerIndex, game.userAnswer)
+    dd.checkInput(game, game.answerIndex, game.userAnswer);
   }
 })
 
